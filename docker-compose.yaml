@@ -1,0 +1,17 @@
+
+version: "3.9"
+services:
+ sosial-media:
+    container_name: sosial-media
+    image: ramses01/sosial-media
+    ports:
+      - "80:80"
+    depends_on:
+      - db-sosial-media
+    links:
+      - db-sosial-media
+ db-sosial-media:
+    container_name: db-sosial-media
+    image: ramses01/db-sosial-media
+    ports:
+      - "3306:3306"
